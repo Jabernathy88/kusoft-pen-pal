@@ -62,8 +62,8 @@ Each resource should have an index/list endpoint, along with show, create, updat
 
     * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. 
 
-8. As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
+9. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.
 
-9. Otherwise, I should not have trouble deleting other records. (Dependent destroy)
+10. As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
 
-10. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.
+11. Otherwise, I should not have trouble deleting other records. (Dependent destroy)

@@ -11,7 +11,9 @@ module Api::V1
 	
 	  # GET /languages/1
 	  def show
-			render json: @language
+			# render json: @language
+
+			render json: @language.as_json(include: [:proficiencies])			
 	  end
 	
 	  # POST /languages

@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+Message.destroy_all
+Proficiency.destroy_all
 Language.destroy_all
+User.destroy_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -39,29 +41,48 @@ korean = Language.create(
   name: "Korean"
 )
 
-# Six proficiencies
+# Seven proficiencies
 alice_english = Proficiency.create(
   level: 6,
   user: alice,
   language: english
 )
-# 3 others
-bob_korean = Proficiency.create(
-  level: 1,
-  user: bob,
-  language: korean
+alice_spanish = Proficiency.create(
+  level: 4,
+  user: alice,
+  language: spanish
+)
+alice_japanese = Proficiency.create(
+  level: 4,
+  user: alice,
+  language: japanese
 )
 alice_korean = Proficiency.create(
   level: 1,
   user: alice,
   language: korean
 )
+bob_english = Proficiency.create(
+  level: 6,
+  user: alice,
+  language: english
+)
+bob_spanish = Proficiency.create(
+  level: 6,
+  user: alice,
+  language: english
+) 
+# bob doesn't know any Japanese 
+bob_korean = Proficiency.create(
+  level: 1,
+  user: bob,
+  language: korean
+)
 
-# Four messages
+# One message
 bob_korean_to_alice = Message.create(
   text: "Hel-loh 'Annyong' Bluth is the adopted Korean son of Lucille and George Bluth via the Korean Consulate of Child Services. Annyong is portrayed by Justin Lee and appeared in 12 episodes of Arrested Development.",
   sender: bob,
   recipient: alice,
   language: korean
 )
-

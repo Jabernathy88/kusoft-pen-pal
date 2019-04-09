@@ -21,18 +21,16 @@ module Api::V1
       sender = @message.sender
       recipient = @message.recipient
       sender_level = Proficiency.where(user_id: sender.id, language_id: language_id)
-      recipient_level = Proficiency.where(user_id: recipient.id, language_id: language_id)
-
-      if 
-        # LOGIC HERE!
-        
-        if @message.save
-          render json: @message, status: :created
-        else
-          render json: @message.errors, status: :unprocessable_entity
+      recipient_level = Proficiency.where(user_id: recipient.id, language_id: language_id)   
+      
+      # additional logic goes here
+      if @message.save
+        render json: @message, status: :created
       else
-        # levels not within 2 
-        render json: { status: 400, message: "Error saving your data." }.to_json
+        render json: @message.errors, status: :unprocessable_entity
+      # else
+      #   # proficiency levels not within 2 
+      #   render json: { status: 400, message: "Error saving your data." }.to_json
       end  
     end  
     # PATCH/PUT /messages/1

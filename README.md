@@ -50,20 +50,20 @@ As any user, I can create, update, or destroy any User's record. (Create, Edit, 
 
 As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
 
-As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
+1. As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
 
-As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
+2. As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
 
-As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
+3. As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
 
-* Alice has an English proficiency of 6. Bob has an English proficiency of 8. Alice **can** send a message to Bob in English.
+    * Alice has an English proficiency of 6. Bob has an English proficiency of 8. Alice **can** send a message to Bob in English.
 
-* Alice's Spanish is 4, while Bob's Spanish is 8. Alice **cannot** send a message to Bob in Spanish. 
+    * Alice's Spanish is 4, while Bob's Spanish is 8. Alice **cannot** send a message to Bob in Spanish.
 
-* Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. 
+    * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. 
 
-As any user, if I try to delete a Language with association records, I will receive an polite error notice instead. 
+4. As any user, if I try to delete a Language with association records, I will receive an polite error notice instead. 
 
-Otherwise, I should not have trouble deleting other records. (Dependent destroy)
+5. Otherwise, I should not have trouble deleting other records. (Dependent destroy)
 
-As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.
+6. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.

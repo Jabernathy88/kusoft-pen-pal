@@ -52,7 +52,7 @@ module Api::V1
 	
 		# Only allow a trusted parameter "white list" through.
 		def language_params
-		  params.require(:language).permit(:first_name, :last_name, :email_address)
+		  params.require(:language).permit(:name)
 		end
 	end
   end  

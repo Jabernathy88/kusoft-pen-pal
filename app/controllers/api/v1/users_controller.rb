@@ -4,7 +4,7 @@ module Api::V1
   
     # GET /users
     def index
-      @users = User.order(:id)
+      @users = User.order(id: :desc)
   
       render json: @users
     end

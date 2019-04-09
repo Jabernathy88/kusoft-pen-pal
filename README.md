@@ -42,19 +42,19 @@ Each resource should have an index/list endpoint, along with show, create, updat
 
 ### Requirements translated into user stories
 
-As any user, I can see an index listing all Users, or I can show one User at a time, selected by id#. (Index, Show)
+1. As any user, I can see an index listing all Users, or I can show one User at a time, selected by id#. (Index, Show)
 
-^ Ditto for all other resources: Languages, Proficiencies, Messages.
+2. ^ Ditto for all other resources: Languages, Proficiencies, Messages.
 
-As any user, I can create, update, or destroy any User's record. (Create, Edit, Delete)
+3. As any user, I can create, update, or destroy any User's record. (Create, Edit, Delete)
 
-As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
+4. As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
 
-1. As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
+5. As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
 
-2. As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
+6. As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
 
-3. As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
+7. As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
 
     * Alice has an English proficiency of 6. Bob has an English proficiency of 8. Alice **can** send a message to Bob in English.
 
@@ -62,8 +62,8 @@ As any user, I can create, update, or destroy any Language record. (Create, Edit
 
     * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. 
 
-4. As any user, if I try to delete a Language with association records, I will receive an polite error notice instead. 
+8. As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
 
-5. Otherwise, I should not have trouble deleting other records. (Dependent destroy)
+9. Otherwise, I should not have trouble deleting other records. (Dependent destroy)
 
-6. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.
+10. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.

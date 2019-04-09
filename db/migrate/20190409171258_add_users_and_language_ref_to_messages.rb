@@ -4,7 +4,6 @@ class AddUsersAndLanguageRefToMessages < ActiveRecord::Migration[5.2]
       t.references :sender
       t.references :recipient
       t.references :language, foreign_key: true
-
     end 
   end
 end

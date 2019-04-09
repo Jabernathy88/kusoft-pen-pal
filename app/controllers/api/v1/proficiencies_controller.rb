@@ -1,58 +1,58 @@
 module Api::V1
-    class UsersController < ApplicationController
-      before_action :set_user, only: [:show, :update, :destroy]
-    
-      # GET /users
-      def index
-        @users = User.order(:id)
-    
-        render json: @users
-      end
-    
-      # GET /users/1
-      def show
-        render json: @user
-      end
-    
-      # POST /users
-      def create
-        @user = User.new(user_params)
-    
-        if @user.save
-          render json: @user, status: :created
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
-    
-      # PATCH/PUT /users/1
-      def update
-        if @user.update(user_params)
-          render json: @user
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
-    
-      # DELETE /users/1
-      def destroy
-        @user.destroy
-        if @user.destroy
-          head :no_content, status: :ok
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end      
-      end
-    
-      private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_user
-          @user = User.find(params[:id])
-        end
-    
-        # Only allow a trusted parameter "white list" through.
-        def user_params
-          params.require(:user).permit(:first_name, :last_name, :email_address)
-        end
-    end
+	class ProficienciesController < ApplicationController
+	  before_action :set_proficiency, only: [:show, :update, :destroy]
+	
+	  # GET /proficiencies
+	  def index
+		@proficiencies = Proficiency.order(id: :desc)
+	
+		render json: @proficiencies
+	  end
+	
+	  # GET /proficiencies/1
+	  def show
+		render json: @proficiency
+	  end
+	
+	  # POST /proficiencies
+	  def create
+		@proficiency = Proficiency.new(proficiency_params)
+	
+		if @proficiency.save
+		  render json: @proficiency, status: :created
+		else
+		  render json: @proficiency.errors, status: :unprocessable_entity
+		end
+	  end
+	
+	  # PATCH/PUT /proficiencies/1
+	  def update
+		if @proficiency.update(proficiency_params)
+		  render json: @proficiency
+		else
+		  render json: @proficiency.errors, status: :unprocessable_entity
+		end
+	  end
+	
+	  # DELETE /proficiencies/1
+	  def destroy
+		@proficiency.destroy
+		if @proficiency.destroy
+		  head :no_content, status: :ok
+		else
+		  render json: @proficiency.errors, status: :unprocessable_entity
+		end      
+	  end
+	
+	  private
+		# Use callbacks to share common setup or constraints between actions.
+		def set_proficiency
+		  @proficiency = Proficiency.find(params[:id])
+		end
+	
+		# Only allow a trusted parameter "white list" through.
+		def proficiency_params
+		  params.require(:proficiency).permit(:first_name, :last_name, :email_address)
+		end
+	end
   end  

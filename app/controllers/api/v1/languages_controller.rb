@@ -4,7 +4,7 @@ module Api::V1
 	
 	  # GET /languages
 	  def index
-		@languages = Language.order(:id)
+		@languages = Language.order(id: :desc)
 	
 		render json: @languages
 	  end

@@ -1,8 +1,10 @@
 class AddUsersAndLanguageRefToMessages < ActiveRecord::Migration[5.2]
   def change
-    add_reference :messages, :user, foreign_key: true
-    add_reference :messages, :recipient_user, foreign_key: true
-    add_reference :messages, :language, foreign_key: true
+    change_table :messages do |t|
+      t.references :sender, foreign_key: true
+      t.references :recipient, foreign_key: true
+
+      t.timestamps
 
   end
 end

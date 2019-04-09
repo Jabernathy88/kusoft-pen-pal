@@ -25,7 +25,7 @@ bob = User.create(
   email_address: 'balish@test.ghostmapmedia.com'
 )
 
-# Three languages
+# Four languages
 english = Language.create(
   name: "English"
 )
@@ -35,10 +35,33 @@ spanish = Language.create(
 japanese = Language.create(
   name: "Japanese"
 )
-
-# Five proficiencies
-alice_english = Proficiency.create(
-  # first_name: "Bob",
-  # last_name: "Balish",
-  # email_address: 'balish@test.ghostmapmedia.com'
+korean = Language.create(
+  name: "Korean"
 )
+
+# Six proficiencies
+alice_english = Proficiency.create(
+  level: 6,
+  user: alice,
+  language: english
+)
+# 3 others
+bob_korean = Proficiency.create(
+  level: 1,
+  user: bob,
+  language: korean
+)
+alice_korean = Proficiency.create(
+  level: 1,
+  user: alice,
+  language: korean
+)
+
+# Four messages
+bob_korean_to_alice = Message.create(
+  text: "Hel-loh 'Annyong' Bluth is the adopted Korean son of Lucille and George Bluth via the Korean Consulate of Child Services. Annyong is portrayed by Justin Lee and appeared in 12 episodes of Arrested Development.",
+  sender: bob,
+  recipient: alice,
+  language: korean
+)
+

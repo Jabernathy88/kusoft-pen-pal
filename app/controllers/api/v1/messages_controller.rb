@@ -17,14 +17,24 @@ module Api::V1
     # POST /messages
     def create
       @message = Message.new(message_params)
-  
-      if @message.save
-        render json: @message, status: :created
+      language_id = @message.language_id
+      sender = @message.sender
+      recipient = @message.recipient
+      sender_level = Proficiency.where(user_id: sender.id, language_id: language_id)
+      recipient_level = Proficiency.where(user_id: recipient.id, language_id: language_id)
+
+      if 
+        # LOGIC HERE!
+        
+        if @message.save
+          render json: @message, status: :created
+        else
+          render json: @message.errors, status: :unprocessable_entity
       else
-        render json: @message.errors, status: :unprocessable_entity
-      end
-    end
-  
+        # levels not within 2 
+        render json: { status: 400, message: "Error saving your data." }.to_json
+      end  
+    end  
     # PATCH/PUT /messages/1
     def update
       if @message.update(message_params)

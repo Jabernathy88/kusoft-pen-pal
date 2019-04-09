@@ -25,13 +25,13 @@ bob = User.create(
 )
 
 # Three languages
-english = Lanuage.create(
+english = Language.create(
   name: "English"
 )
-spanish = Lanuage.create(
+spanish = Language.create(
   name: "Spanish"
 )
-japanese = Lanuage.create(
+japanese = Language.create(
   name: "Japanese"
 )
 

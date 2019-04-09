@@ -50,11 +50,9 @@ As any user, I can create, update, or destroy any User's record. (Create, Edit, 
 
 As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
 
- ---
-
 As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
 
-As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#.
+As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
 
 As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
 
@@ -67,3 +65,5 @@ As any user, I will not be able to create or update a Message unless certain con
 As any user, if I try to delete a Language with association records, I will receive an polite error notice instead. 
 
 Otherwise, I should not have trouble deleting other records. (Dependend destroy)
+
+As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.

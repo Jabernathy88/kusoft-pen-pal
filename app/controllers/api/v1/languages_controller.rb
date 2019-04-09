@@ -4,44 +4,44 @@ module Api::V1
 	
 	  # GET /languages
 	  def index
-		@languages = Language.order(id: :desc)
+			@languages = Language.order(id: :desc)
 	
-		render json: @languages
+			render json: @languages
 	  end
 	
 	  # GET /languages/1
 	  def show
-		render json: @language
+			render json: @language
 	  end
 	
 	  # POST /languages
 	  def create
-		@language = Language.new(language_params)
+			@language = Language.new(language_params)
 	
-		if @language.save
-		  render json: @language, status: :created
-		else
-		  render json: @language.errors, status: :unprocessable_entity
-		end
+			if @language.save
+				render json: @language, status: :created
+			else
+				render json: @language.errors, status: :unprocessable_entity
+			end
 	  end
 	
 	  # PATCH/PUT /languages/1
 	  def update
-		if @language.update(language_params)
-		  render json: @language
-		else
-		  render json: @language.errors, status: :unprocessable_entity
-		end
+			if @language.update(language_params)
+				render json: @language
+			else
+				render json: @language.errors, status: :unprocessable_entity
+			end
 	  end
 	
 	  # DELETE /languages/1
 	  def destroy
-		@language.destroy
-		if @language.destroy
-		  head :no_content, status: :ok
-		else
-		  render json: @language.errors, status: :unprocessable_entity
-		end      
+			@language.destroy
+			if @language.destroy
+				head :no_content, status: :ok
+			else
+				render json: @language.errors, status: :unprocessable_entity
+			end      
 	  end
 	
 	  private
@@ -55,4 +55,4 @@ module Api::V1
 		  params.require(:language).permit(:name)
 		end
 	end
-  end  
+end  

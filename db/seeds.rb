@@ -23,3 +23,16 @@ bob = User.create(
   last_name: "Balish",
   email_address: 'balish@test.ghostmapmedia.com'
 )
+
+# Three languages
+english = Lanuage.create(
+  name: "English"
+)
+spanish = Lanuage.create(
+  name: "Spanish"
+)
+japanese = Lanuage.create(
+  name: "Japanese"
+)
+
+

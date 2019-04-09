@@ -64,6 +64,6 @@ As any user, I will not be able to create or update a Message unless certain con
 
 As any user, if I try to delete a Language with association records, I will receive an polite error notice instead. 
 
-Otherwise, I should not have trouble deleting other records. (Dependend destroy)
+Otherwise, I should not have trouble deleting other records. (Dependent destroy)
 
 As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.

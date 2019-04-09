@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Language.destroy_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -35,4 +36,9 @@ japanese = Language.create(
   name: "Japanese"
 )
 
-
+# Five proficiencies
+alice_english = Proficiency.create(
+  # first_name: "Bob",
+  # last_name: "Balish",
+  # email_address: 'balish@test.ghostmapmedia.com'
+)

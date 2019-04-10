@@ -2,6 +2,18 @@
 
 A small language-learning API. 
 
+### Deployed API address
+
+Root: ![kusoft-pen-pal.herokuapp.com]((https://kusoft-pen-pal.herokuapp.com)
+
+Specific routes must be accessed using the `api/v1/` namespace as shown below.
+
+Example serialized route: ![kusoft-pen-pal.herokuapp.com/api/v1/users/1](https://kusoft-pen-pal.herokuapp.com/api/v1/users/1)
+
+### Additional JSON request documentation in Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0b1788f79c9332fcc6bd)
+
 ### Requirements to deliver
 
 The application you'll be building is a simple Rails API; no Rails views or frontend is needed. All requests should return data in JSON format. The application should be backed by a Postgres database.
@@ -42,28 +54,28 @@ Each resource should have an index/list endpoint, along with show, create, updat
 
 ### Requirements translated into user stories
 
-1. As any user, I can see an index listing all Users, or I can show one User at a time, selected by id#. (Index, Show)
+1. *(Done)* As any user, I can see an index listing all Users, or I can show one User at a time, selected by id#. (Index, Show)
 
-2. ^ Ditto for all other resources: Languages, Proficiencies, Messages.
+2. ^ Ditto for all other resources: Languages, Proficiencies, Messages. *(Done)*
 
-3. As any user, I can create, update, or destroy any User's record. (Create, Edit, Delete)
+3. *(Done)* As any user, I can create, update, or destroy any User's record. (Create, Edit, Delete)
 
-4. As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
+4. *(Done)* As any user, I can create, update, or destroy any Language record. (Create, Edit, Delete)
 
-5. As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
+5. *(Done)* As any user, I can create, update, or destroy any Proficiency, and I can indicate which User owns the Proficiency by providing the User's id#. (Create, Edit, Delete)
 
-6. As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
+6. *(Done)* As any user, I can create, update, or destroy any Message, and I can indicate the Sender and Recipient by their User id#s.
 
-7. As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
+7. *(Done)* As any user, I will not be able to create or update a Message unless certain conditions are met. For example:
 
-    * Alice has an English proficiency of 6. Bob has an English proficiency of 8. Alice **can** send a message to Bob in English.
+    * Alice has an English proficiency of 6. Bob has an English proficiency of 8. Alice **can** send a message to Bob in English. *(Done)*
 
-    * Alice's Spanish is 4, while Bob's Spanish is 8. Alice **cannot** send a message to Bob in Spanish.
+    * Alice's Spanish is 4, while Bob's Spanish is 8. Alice **cannot** send a message to Bob in Spanish. *(Done)*
 
-    * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. 
+    * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. *(Done)*
 
-9. As any user, when I request to see any Language, the system will also show the current average proficiency among all Users, rounded to two decimal points.
+8. *(Incomplete)* As any user, when I request to see any Language, the system will also show the current average proficiency among all Users. 
 
-10. As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
+9. *(Done)* As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
 
-11. Otherwise, I should not have trouble deleting other records. (Dependent destroy)
+10. *(Done)* Otherwise, I should not have trouble deleting other records. (Dependent destroy)

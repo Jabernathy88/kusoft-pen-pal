@@ -1,38 +1,38 @@
 module Api::V1
-  class MessagesController < ApplicationController
-    before_action :set_message, only: [:show, :update, :destroy]
+	class MessagesController < ApplicationController
+ 		before_action :set_message, only: [:show, :update, :destroy]
+
+		# GET /messages
+		def index
+			@messages = Message.order(id: :desc)
+
+			render json: @messages
+		end
     
-    # GET /messages
-    def index
-      @messages = Message.order(id: :desc)
-    
-      render json: @messages
-    end
-    
-    # GET /messages/1
-    def show
-      render json: @message
-    end
+		# GET /messages/1
+		def show
+			render json: @message
+		end
   
-    # POST /messages
-    def create
-      @message = Message.new(message_params)
-      
-      if Message.levels_within_range?(@message)
-        if @message.save
-          render json: @message, status: :created
-        else
+		# POST /messages
+		def create
+			@message = Message.new(message_params)
+
+			if Message.levels_within_range?(@message)
+				if @message.save
+					render json: @message, status: :created
+				else
 					render json: @message.errors, status: :unprocessable_entity
 				end
-      else
-        render json: {
+			else
+				render json: {
 					code: 401,
-          message: "Error. Your language proficiency level must be within 2 points of the recipient's to send this message."
-        }, status: :unauthorized
-      end
-    end  
+					message: "Error. Your language proficiency level must be within 2 points of the recipient's to send this message."
+				}, status: :unauthorized
+			end
+		end  
 
-    # PATCH/PUT /messages/1
+		# PATCH/PUT /messages/1
     def update
       if @message.update(message_params)
         render json: @message

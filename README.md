@@ -4,11 +4,11 @@ A small language-learning API.
 
 ### Deployed API address
 
-Root: ![kusoft-pen-pal.herokuapp.com]((https://kusoft-pen-pal.herokuapp.com)
+Root: [kusoft-pen-pal.herokuapp.com]((https://kusoft-pen-pal.herokuapp.com)
 
 Specific routes must be accessed using the `api/v1/` namespace as shown below.
 
-Example serialized route: ![kusoft-pen-pal.herokuapp.com/api/v1/users/1](https://kusoft-pen-pal.herokuapp.com/api/v1/users/1)
+Example serialized route: [kusoft-pen-pal.herokuapp.com/api/v1/users/1](https://kusoft-pen-pal.herokuapp.com/api/v1/users/1)
 
 ### Additional JSON request documentation in Postman
 

@@ -33,33 +33,33 @@ module Api::V1
 		end  
 
 		# PATCH/PUT /messages/1
-    def update
-      if @message.update(message_params)
-        render json: @message
-      else
-        render json: @message.errors, status: :unprocessable_entity
-      end
-    end
+		def update
+			if @message.update(message_params)
+				render json: @message
+			else
+				render json: @message.errors, status: :unprocessable_entity
+			end
+		end
   
-    # DELETE /messages/1
-    def destroy
-      @message.destroy
-      if @message.destroy
-        head :no_content, status: :ok
-      else
-        render json: @message.errors, status: :unprocessable_entity
-      end      
-    end
+		# DELETE /messages/1
+		def destroy
+			@message.destroy
+			if @message.destroy
+				head :no_content, status: :ok
+			else
+				render json: @message.errors, status: :unprocessable_entity
+			end      
+		end
   
-    private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find(params[:id])
-    end
+		private
+		# Use callbacks to share common setup or constraints between actions.
+		def set_message
+			@message = Message.find(params[:id])
+		end
 
-    # Only allow a trusted parameter "white list" through.
-    def message_params
-      params.require(:message).permit(:text, :sender_id, :recipient_id, :language_id)
-    end
-  end
+		# Only allow a trusted parameter "white list" through.
+		def message_params
+			params.require(:message).permit(:text, :sender_id, :recipient_id, :language_id)
+		end
+	end
 end

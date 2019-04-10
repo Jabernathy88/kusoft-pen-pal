@@ -63,18 +63,18 @@ alice_korean = Proficiency.create(
   language: korean
 )
 bob_english = Proficiency.create(
-  level: 6,
+  level: 8,
   user: alice,
   language: english
 )
 bob_spanish = Proficiency.create(
-  level: 6,
+  level: 8,
   user: alice,
   language: english
 ) 
 # bob doesn't know any Japanese 
 bob_korean = Proficiency.create(
-  level: 1,
+  level: 3,
   user: bob,
   language: korean
 )

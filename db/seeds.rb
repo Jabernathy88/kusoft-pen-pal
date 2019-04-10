@@ -74,7 +74,7 @@ bob_spanish = Proficiency.create(
 ) 
 # bob doesn't know any Japanese 
 bob_korean = Proficiency.create(
-  level: 3,
+  level: 4,
   user: bob,
   language: korean
 )

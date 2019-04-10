@@ -4,8 +4,8 @@ class Proficiency < ApplicationRecord
 	before_save :adjust_level_min_max
 	
 	def adjust_level_min_max
-		if self.level < 0 
-			self.level = 0
+		if self.level < 1 
+			self.level = 1
 		end
 		if self.level > 10
 			self.level = 10			

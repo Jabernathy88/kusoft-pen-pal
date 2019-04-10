@@ -16,7 +16,7 @@ class Message < ApplicationRecord
 				sender_level = sender_proficiency.level+2 # adding the +2 to avoid negative number in logic below
 				sender_level = sender_proficiency.level+2
 	
-				if recipient_level-2 && sender_level <= recipient_level+2
+				if sender_level >= recipient_level-2 && sender_level <= recipient_level+2
 					return true
 				else
 					false

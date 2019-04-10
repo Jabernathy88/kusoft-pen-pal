@@ -8,12 +8,19 @@ class Message < ApplicationRecord
 		sender = message.sender
 		recipient = message.recipient
 
-		if language && sender && recipient			
-			sender_level = Proficiency.find_by(user_id: sender.id, language_id: language.id).level+2 # adjust to avoid negative number for logic below
-			recipient_level = Proficiency.find_by(user_id: recipient.id, language_id: language.id).level+2
+		if language && sender && recipient
+			sender_proficiency = Proficiency.find_by(user_id: sender.id, language_id: language.id)
+			recipient_proficiency = Proficiency.find_by(user_id: recipient.id, language_id: language.id)
 
-			if sender_level && recipient_level && sender_level >= recipient_level-2 && sender_level <= recipient_level+2
-				return true
+			if sender_proficiency && recipient_proficiency && sender_proficiency.level && recipient_proficiency.level
+				sender_level = sender_proficiency.level+2 # adding the +2 to avoid negative number in logic below
+				sender_level = sender_proficiency.level+2
+	
+				if recipient_level-2 && sender_level <= recipient_level+2
+					return true
+				else
+					false
+				end 
 			else
 				false
 			end

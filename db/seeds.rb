@@ -42,22 +42,22 @@ korean = Language.create(
 )
 
 # Seven proficiencies
-alice_english = Proficiency.create(
+alice_english = Proficiency.create( # Alice can message Bob in English
   level: 6,
   user: alice,
   language: english
 )
-alice_spanish = Proficiency.create(
+alice_spanish = Proficiency.create( # Alice can't message Bob in Spanish
   level: 4,
   user: alice,
   language: spanish
 )
-alice_japanese = Proficiency.create(
+alice_japanese = Proficiency.create( # Bob doesn't know any Japanese
   level: 4,
   user: alice,
   language: japanese
 )
-alice_korean = Proficiency.create(
+alice_korean = Proficiency.create( # Alice isn't good enough at Korean to message Bob
   level: 1,
   user: alice,
   language: korean
@@ -70,7 +70,7 @@ bob_english = Proficiency.create(
 bob_spanish = Proficiency.create(
   level: 8,
   user: bob,
-  language: english
+  language: spanish
 ) 
 # bob doesn't know any Japanese 
 bob_korean = Proficiency.create(
@@ -80,9 +80,9 @@ bob_korean = Proficiency.create(
 )
 
 # One message
-bob_korean_to_alice = Message.create(
+bob_english_to_alice = Message.create(
   text: "Hel-loh 'Annyong' Bluth is the adopted Korean son of Lucille and George Bluth via the Korean Consulate of Child Services. Annyong is portrayed by Justin Lee and appeared in 12 episodes of Arrested Development.",
   sender: bob,
   recipient: alice,
-  language: korean
+  language: english
 )

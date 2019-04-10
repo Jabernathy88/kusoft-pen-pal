@@ -4,7 +4,7 @@ A small language-learning API.
 
 ### Deployed API address
 
-Root: [kusoft-pen-pal.herokuapp.com]((https://kusoft-pen-pal.herokuapp.com)
+Root: [kusoft-pen-pal.herokuapp.com](https://kusoft-pen-pal.herokuapp.com)
 
 Specific routes must be accessed using the `api/v1/` namespace as shown below.
 

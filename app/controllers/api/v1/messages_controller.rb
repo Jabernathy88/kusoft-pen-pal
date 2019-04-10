@@ -17,22 +17,21 @@ module Api::V1
     # POST /messages
     def create
       @message = Message.new(message_params)
-      language_id = @message.language_id
-      sender = @message.sender
-      recipient = @message.recipient
-      sender_level = Proficiency.where(user_id: sender.id, language_id: language_id)
-      recipient_level = Proficiency.where(user_id: recipient.id, language_id: language_id)   
       
-      # additional logic goes here
-      if @message.save
-        render json: @message, status: :created
+      if Message.levels_within_range?(@message)
+        if @message.save
+          render json: @message, status: :created
+        else
+					render json: @message.errors, status: :unprocessable_entity
+				end
       else
-        render json: @message.errors, status: :unprocessable_entity
-      # else
-      #   # proficiency levels not within 2 
-      #   render json: { status: 400, message: "Error saving your data." }.to_json
-      end  
+        render json: {
+					code: 401,
+          message: "Error. Your language proficiency level must be within 2 points of the recipient's to send this message."
+        }, status: :unauthorized
+      end
     end  
+
     # PATCH/PUT /messages/1
     def update
       if @message.update(message_params)

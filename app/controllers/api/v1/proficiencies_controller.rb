@@ -1,6 +1,6 @@
 module Api::V1
 	class ProficienciesController < ApplicationController
-	  before_action :set_proficiency, only: [:show, :update, :destroy]
+		before_action :set_proficiency, only: [:show, :update, :destroy]
 	
 	  # GET /proficiencies
 	  def index
@@ -54,5 +54,6 @@ module Api::V1
 		def proficiency_params
 		  params.require(:proficiency).permit(:level, :user_id, :language_id)
 		end
+		
 	end
 end  

@@ -1,4 +1,4 @@
-# kusoft-pen-pal
+## Pen Pal Sample App
 
 A small language-learning API. 
 
@@ -74,7 +74,7 @@ Each resource should have an index/list endpoint, along with show, create, updat
 
     * Alice's has Japanese proficiency, but Bob does not have any proficiency in Japanese. Alice **cannot** send a message to Bob in Japanese. *(Done)*
 
-8. *(Incomplete)* As any user, when I request to see any Language, the system will also show the current average proficiency among all Users. 
+8. *(Done)* As any user, when I request to see any Language, the system will also show the current average proficiency among all Users. 
 
 9. *(Done)* As any user, I cannot delete a Language if it is referenced by a Proficiency record. 
 
